@@ -1,25 +1,85 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-void convertToFeetAndInches (int t_length, int &t_feet, int &t_inches);
-
-int _tmain(int argc, _TCHAR* argv[])
+//create structures
+struct circle
 {
-	int length = 25;
-	int feet, inches;
+	float radius;
+};
+
+struct rectangle
+{
+	float length;
+	float width;
+};
+
+struct square
+{
+	float length;
+};
+
+//declaring functions
+float areaofCircle(circle c);
+float areaofRectangle(rectangle r);
+float areaofSquare(square s);
+
+int main()
+{
+	//declaring the struct variables
+	struct circle c1;
+	struct rectangle r1;	//small rectangle
+	struct rectangle r2;	//big rectangle (yard)
+	struct square s1;
 	
-	convertToFeetAndInches (length, feet, inches);
+	float Area_Circle, Area_Yard, Area_Rectangle, Area_Square, GreenArea;
 	
-	cout <<"Length: "<< length <<"="<< feet <<"feet and "<< inches <<"inches"<< endl;
+	//circle
+	cout <<"Enter Radius: ";
+	cin >> c1.radius;
 	
-	char ch;
-	cin >> ch;
+	//rectangle
+	cout <<"Enter length for the Rectangle: ";
+	cin >> r1.length;
 	
-	return 0;
+	cout <<"Enter width of the Rectangle: ";
+	cin >> r1.width;
+	
+	//yard
+	cout <<"Enter length for the Yard: ";
+	cin >> r2.length;
+	
+	cout <<"Enter width of the Yard: ";
+	cin >> r2.width;
+	
+	//square
+	cout <<"Enter length of the Square: ";
+	cin >> s1.length; 
+	
+	//calling functions
+	Area_Circle = areaofCircle(c1);
+	Area_Rectangle = areaofRectangle(r1);	//small rectangle
+	Area_Yard = areaofRectangle(r2);	//Yard
+	Area_Square = areaofSquare(s1);
+	
+	GreenArea = Area_Yard - (Area_Circle + Area_Rectangle + Area_Square);
+	
+	cout << "Area of Green part: " << setiosflags(ios::fixed) << setprecision(3) << GreenArea << endl; 
 }
 
-void convertToFeetAndInches (int t_length, int &t_feet, int &t_inches)
+//function implementation
+float areaofCircle(circle c)
 {
-	t_feet = t_length / 12;
-	t_inches = t_length % 12;
+	return (22 / 7.0) * c.radius * c.radius;
 }
+
+float areaofRectangle(rectangle r)
+{
+	return r.length* r.width;
+}
+
+float areaofSquare(square s)
+{
+	return s.length * s.length;
+}
+
