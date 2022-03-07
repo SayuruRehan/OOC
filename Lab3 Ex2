@@ -1,0 +1,111 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//create structures
+struct circle
+{
+	float radius;
+};
+
+struct rectangle
+{
+	float length;
+	float width;
+};
+
+struct square
+{
+	float length;
+};
+
+//declaring functions
+float areaofCircle(circle c);
+float areaofRectangle(rectangle r);
+float areaofSquare(square s);
+
+//to find the Perimeter
+float findPerimeter(rectangle r, float& perimeter);
+
+//to find the Cost
+float findCost(float costU, float& perimeter);
+
+int main()
+{
+	//declaring the struct variables
+	struct circle c1;
+	struct rectangle r1;	//small rectangle
+	struct rectangle r2;	//big rectangle (yard)
+	struct square s1;
+	
+	float Area_Circle, Area_Yard, Area_Rectangle, Area_Square, GreenArea, costU, perimeter, Perimeter_Yard, cost;
+	
+	//circle
+	cout <<"Enter Radius: ";
+	cin >> c1.radius;
+	
+	//rectangle
+	cout <<"Enter length for the Rectangle: ";
+	cin >> r1.length;
+	
+	cout <<"Enter width of the Rectangle: ";
+	cin >> r1.width;
+	
+	//yard
+	cout <<"Enter length for the Yard: ";
+	cin >> r2.length;
+	
+	cout <<"Enter width of the Yard: ";
+	cin >> r2.width;
+	
+	//square
+	cout <<"Enter length of the Square: ";
+	cin >> s1.length; 
+	
+	cout << "Enter cost per unit Rs.: ";
+	cin >> costU;
+	
+	//calling functions
+	Area_Circle = areaofCircle(c1);
+	Area_Rectangle = areaofRectangle(r1);	//small rectangle
+	Area_Yard = areaofRectangle(r2);	//Yard
+	Area_Square = areaofSquare(s1);
+	
+	GreenArea = Area_Yard - (Area_Circle + Area_Rectangle + Area_Square);
+	
+	cout << "Area of Green part: " << setiosflags(ios::fixed) << setprecision(3) << GreenArea << endl; 
+	
+	Perimeter_Yard = findPerimeter(r2, perimeter);
+	cout << "Perimeter of the Yard: " << Perimeter_Yard << endl;
+	
+	cost = findCost(costU, perimeter);
+	cout << "Total Cost of building a fence Rs.: " <<setiosflags(ios::fixed) << setprecision(2) << cost << endl;
+	
+}
+
+//function implementation
+float areaofCircle(circle c)
+{
+	return (22 / 7.0) * c.radius * c.radius;
+}
+
+float areaofRectangle(rectangle r)
+{
+	return r.length* r.width;
+}
+
+float areaofSquare(square s)
+{
+	return s.length * s.length;
+}
+
+float findPerimeter(rectangle r, float& perimeter)
+{
+	perimeter = 2 * (r.length + r.width);
+	return perimeter;
+}
+
+float findCost(float costU, float& perimeter)
+{
+	return costU * perimeter;
+}
