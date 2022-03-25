@@ -1,0 +1,62 @@
+//Lab4.cpp: This file contains the main function
+
+#include <iostream>
+#include <iomanip>
+//#include "StdAfx.h"
+#include "ShapeArea.h"
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+  //declare struct variables
+  struct Circle c1;  //pond -circle
+  struct Square s1;  //square building
+  struct Rectangle r1;  //rectangle building
+  struct Rectangle r2;  //yard area
+
+  float area_circle, area_square, area_rectangle, area_yard, GreenArea;  //define variabes
+  float perimeter, perimeter_yard, unitCost, cost;
+
+  //input value for pond-circle
+  cout <<"Enter radius for pond: ";
+  cin >> c1.radius;
+
+  //input value for square building
+  cout <<"Enter the length of square building: ";
+  cin >> s1.length;
+
+  //input value for rectangle building
+  cout <<"Enter the length of the rectangle building: ";
+  cin >> r1.length;
+  cout <<"Enter the width of the rectangle building: ";
+  cin >> r1.width;
+
+  //input value for yard
+  cout <<"Enter the length of the yard: ";
+  cin >> r2.length;
+  cout <<"Enter the width of the yard: ";
+  cin >> r2.width;
+
+  //calling functions
+  area_circle = areaofCircle(c1);
+  area_square = areaofSquare(s1);
+  area_rectangle = areaofRectangle(r1);
+  area_yard = areaofRectangle(r1);
+
+  //calculation
+  GreenArea = area_yard - (area_circle + area_square + area_rectangle);
+  cout << "Area of green area: " <<setiosflags(ios::fixed) << setprecision(3) << GreenArea << endl;
+
+  //calling function for finding perimeter of yard
+  perimeter_yard = findPerimeter(r2, perimeter);
+
+  cout << "Perimeter of yard: " <<setiosflags(ios::fixed) << setprecision(3) << perimeter_yard << endl;
+
+  //getting input as unit cost
+  cout <<"Enter cost per unit: ";
+  cin >> unitCost;
+
+  //calling function for finding cost to build fence
+  cost = findCost(perimeter, unitCost);
+  cout << "Cost to build fence around the yard: " <<setiosflags(ios::fixed) << setprecision(2)<<cost << endl;
+}
