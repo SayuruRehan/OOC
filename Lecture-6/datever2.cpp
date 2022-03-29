@@ -1,45 +1,45 @@
-#include <iostream>
+#include <iostream>  //header files
 #include <iomanip>
 using namespace std;
 
-class Date
+class Date  //create class Date
 {
-private:
+private:  //private attributes
 int day;
 int month;
 int year;
 
-public:
-void setDay(int d);
+public:  //public attributes
+void setDay(int d);    //setters
 void setMonth(int m);
 void setYear(int y);
 
-int getDay();
+int getDay();    //getters
 int getMonth();
 int getYear();
 };
 
-void Date::setMonth(int m)
+void Date::setMonth(int m)  //setmonth function
 {
   month = m;
 }
 
-void Date::setYear(int y)
+void Date::setYear(int y)  //setYear function
 {
   year = y;
 }
 
-int Date::getDay()
+int Date::getDay()  //getDay function
 {
   return day;
 }
 
-int Date::getMonth()
+int Date::getMonth()  //getmonth function
 {
   return month;
 }
 
-int Date::getYear()
+int Date::getYear()  //getYear function
 {
   return year;
 }
@@ -50,9 +50,9 @@ int main()
   //create an object
   Date d1;
 
-  int md, mm, my;
+  int md, mm, my;    //declaring variables
 
-  cout<<"Input Day: ";
+  cout<<"Input Day: ";    //user input
   cin>>md;
   cout<<"Input month: ";
   cin>>mm;
@@ -66,4 +66,4 @@ int main()
   cout <<setw(2)<<setfill('0')<<d1.getDay() <<"/"<<setw(2)<<setfill('0') << d1.getMonth() <<"/"<<setw(4)<<d1.getYear()<<endl;
 
   return 0;
-}
+}//end main
