@@ -63,7 +63,7 @@ int main()
   d1.setMonth(mm);
   d1.setYear(my);
 
-  cout <<setw(2)<<setfill('0')<<d1.getDay() <<"/"<<setw(2)<<setfill('0') << d1.getMonth() <<"/"<<setw(4)<<d1.getYear()<<endl;
+  cout <<setw(2)<<setfill('0')<<d1.getDay() <<"/"<<setw(2)<<setfill('0') << d1.getMonth() <<"/"<<setw(4)<<d1.getYear()<<endl;    //final output
 
   return 0;
 }//end main
