@@ -1,9 +1,9 @@
-#include <iostream>
+#include <iostream>    //header files
 using namespace std;
 
-int main() 
+int main() //begin main
 {
-  float number1 = 6.2;
+  float number1 = 6.2;  //declaring variables
   float number2 = 7.3;
 
   float *fPtr;  //Part1
@@ -16,4 +16,4 @@ int main()
   cout << *fPtr <<endl;  //Part7
   
   return 0;
-}
+}//end main
