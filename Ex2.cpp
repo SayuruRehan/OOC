@@ -28,7 +28,7 @@ int main() //begin main
 		
 		details[i].student = i + 1;
 		
-		findMarks(details[i].t_marks1, details[i].t_marks2, details[i].t_CA1, details[i].t_CA2);
+		findMarks(details[i].t_marks1, details[i].t_marks2, details[i].t_CA1, details[i].t_CA2);  //calling function
 	}  //end for loop
 	
 	cout << endl;
@@ -44,7 +44,7 @@ int main() //begin main
 	//return 0;
 }
 
-void findMarks(int t_marks1, int t_marks2, float& t_CA1, float& t_CA2) 
+void findMarks(int t_marks1, int t_marks2, float& t_CA1, float& t_CA2) //function implementation
 {
 	t_CA1 = (t_marks1 = 20) / 100.0;
 	t_CA2 = (t_marks2 = 30) / 100.0;
