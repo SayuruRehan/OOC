@@ -1,14 +1,14 @@
-#include <iostream>
+#include <iostream>    //header files
 using namespace std;
 
-class Date
+class Date    //create class Date
 {
-private:
+private://private attributes
 int day;
 int month;
 int year;
 
-public:
+public://public attributes
 void setDay(int d);
 void setMonth(int m);
 void setYear(int y);
