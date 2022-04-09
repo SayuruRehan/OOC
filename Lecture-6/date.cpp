@@ -28,17 +28,17 @@ void Date::setYear(int y)  //setYear function
   year = y;
 }
 
-int Date::getDay()  
+int Date::getDay()  //getDay function
 {
   return day;
 }
 
-int Date::getMonth()
+int Date::getMonth()  //getMonth function
 {
   return month;
 }
 
-int Date::getYear()
+int Date::getYear()  //getYear function
 {
   return year;
 }
