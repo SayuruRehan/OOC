@@ -44,7 +44,7 @@ int Date::getYear()
 }
 
 //client program
-int main()
+int main()    //begin main
 {
   //create an object
   Date d1;
@@ -53,7 +53,7 @@ int main()
   d1.setMonth(8);
   d1.setYear(2022);
 
-  cout << d1.getDay() <<"/"<< d1.getMonth() <<"/"<<d1.getYear()<<endl;
+  cout << d1.getDay() <<"/"<< d1.getMonth() <<"/"<<d1.getYear()<<endl;  //final output
 
   return 0;
-}
+}//end main
