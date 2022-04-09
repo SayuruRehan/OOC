@@ -9,26 +9,26 @@ int month;
 int year;
 
 public://public attributes
-void setDay(int d);
+void setDay(int d);    //setters
 void setMonth(int m);
 void setYear(int y);
 
-int getDay();
+int getDay();  //getters
 int getMonth();
 int getYear();
 };
 
-void Date::setMonth(int m)
+void Date::setMonth(int m)  //setMonth function
 {
   month = m;
 }
 
-void Date::setYear(int y)
+void Date::setYear(int y)  //setYear function
 {
   year = y;
 }
 
-int Date::getDay()
+int Date::getDay()  
 {
   return day;
 }
