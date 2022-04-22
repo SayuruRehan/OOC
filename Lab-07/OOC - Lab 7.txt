@@ -1,0 +1,121 @@
+#pragma once
+class Distance{
+private:
+	int feet;
+	float inches;
+
+public:
+	Distance();					//Defualt Constructor
+	Distance(int ft, float in);	//Overload Constructor
+	void inputDistance();
+	void printDistance();
+	void addDistance(Distance d2, Distance d3);  // This takes teo objects ofdistance class as its parameters
+
+	~Distance();				//Destructor
+
+};
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "Distance.h"
+#include "iostream"
+using namespace std;
+
+Distance::Distance() {
+	feet = 0;
+	inches = 0.0;
+}
+
+
+Distance::Distance(int ft, float in) {
+	feet = ft;
+	inches = in;
+
+}
+
+void Distance::inputDistance() {
+	cout << "Enter No of feet : ";
+	cin >> feet;
+	cout << "Enter No of inches : ";
+	cin >> inches;
+
+}
+
+
+void Distance::printDistance() {
+	cout << "feet = " << feet << " and ";
+	cout << "inches = " << inches << endl;
+
+}
+
+Distance::~Distance() {
+	cout << "Distance deleted" << endl;
+}
+
+void Distance::addDistance(Distance d2, Distance d3)
+{
+	inches = d2.inches + d3.inches;
+	if (inches >= 12.0)
+	{
+		inches = inches - 12.0;
+		feet++;
+	}
+	feet = feet + (d2.feet + d3.feet);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Lab 7.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include "Distance.h"
+using namespace std;
+
+
+
+int main()
+{
+    // Ex_1
+ /*   // default constructor
+    Distance obdist1;
+    obdist1.printDistance();
+    obdist1.~Distance();
+
+    // overload constructor
+    Distance obdist2(11, 6.25);
+    obdist2.printDistance();
+    obdist2.~Distance();  */
+
+
+    // Ex_2
+  /*  // default constructor
+    Distance *dist1 = new Distance();
+    dist1->printDistance();
+
+    // overload constructor
+    Distance *dist2 = new Distance (11, 6.25);
+    dist2->printDistance();
+    dist2->~Distance();  */
+
+    // Ex_3
+    Distance dist1, dist3;
+
+    Distance dist2(11, 6.25);
+
+    dist1.inputDistance();  // read feet and inch from user
+    dist3.addDistance(dist1, dist2);
+
+    dist1.printDistance();
+    dist2.printDistance();
+    dist3.printDistance();
+
+
+    return 0;
+
+
+}
+
