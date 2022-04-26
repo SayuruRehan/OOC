@@ -1,11 +1,11 @@
 #pragma once
 class Distance
 {
-  private:
+  private:  //private class
     int feet;
     float inches;
   
-  public:
+  public: //public class
     Distance(); //Default Constructor
     Distance(int ft, float in); //overloaded constructor
     void inputDistance();
