@@ -17,5 +17,5 @@ int main() {
        << rec2.getWidth()
        << endl;
 
-return 0;
+  return 0;
 }
