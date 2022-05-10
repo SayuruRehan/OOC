@@ -1,4 +1,3 @@
-// Writen by Anjalie Gamage
 // OOC Lecture 11
 
 // Person, Student, Employee Classes
