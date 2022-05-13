@@ -1,16 +1,19 @@
-# include <iostream>
-# include <cstring>
+#include <iostream>
+#include <cstring>
 using namespace std;
 
 class Animal {
 protected:
 	char name[20];
+
 public:
 	Animal() {}
 	Animal(char tname[]) {
 		strcpy(name, tname);
 	}
+
 	virtual void speak() {}
+
 	void song() {
 		cout << name << "'s Song " << endl;
 		speak();
@@ -21,6 +24,7 @@ public:
     cout << endl;
 	}
 };
+
 class Cat : public Animal {
 public:
 	Cat() {}
@@ -50,9 +54,6 @@ public:
 
 int main()
 {
-	
-	
-
 	Animal *ani[4];
 	ani[0] = new Cat("Micky the Cat");
 	ani[1] = new Dog("Rover the Dog");
@@ -61,6 +62,5 @@ int main()
 	for (int r=0;r<4; r++)
 		ani[r]->song();
 
-	
 	return 0;
 }

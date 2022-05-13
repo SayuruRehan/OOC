@@ -15,6 +15,7 @@ protected :
   char name[20]; 
   char address[20];
   int age;
+
 public:
   Person() {
       strcpy(name, "Keith");
@@ -29,10 +30,11 @@ public:
    }
 };
 
-class Employee : public Person {
+class Employee : public Person {  //inheritance relationship
 protected : 
    int empNo;
    double salary;
+
 public:
    Employee() { 
       strcpy(name, "Lalani");
@@ -53,7 +55,7 @@ public:
    }
 };
 
-class Lecturer : public Employee {
+class Lecturer : public Employee {  //inheritance relationship
 protected : 
    int noOfModules;
 public:
@@ -88,5 +90,6 @@ int main() {
     e1.display();
     l1.display();
     l1.displayDetails();
+  
     return 0;
 }
