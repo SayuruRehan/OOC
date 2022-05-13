@@ -19,7 +19,7 @@ class Shape {
       }
 };
 
-class Rectangle : public Shape {
+class Rectangle : public Shape {  //inheritance relationship
     protected:
        int length;
        int width;
@@ -32,7 +32,7 @@ class Rectangle : public Shape {
        }
 };
 
-class Square : public Rectangle {
+class Square : public Rectangle {  //inheritance relationship
   public:
      Square() {
           cout << "Square Default constructor called " << endl;
@@ -41,5 +41,6 @@ class Square : public Rectangle {
 
 int main() {
    Square mySqr;
+  
    return 0;
 }

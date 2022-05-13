@@ -11,6 +11,7 @@ using namespace std;
 class Shape {
    protected:
       char name[20];
+
    public:
       Shape(char pname[]) {
          cout << "Shape called " << endl;
@@ -21,10 +22,11 @@ class Shape {
       }
 };
 
-class Rectangle : public Shape {
+class Rectangle : public Shape {  //inheritance relationship
     protected:
        int length;
        int width;
+
     public:
        Rectangle(char pname[], int plength, int pwidth) 
           : Shape(pname) {
@@ -37,7 +39,7 @@ class Rectangle : public Shape {
        }
 };
 
-class Square : public Rectangle {
+class Square : public Rectangle {  //inheritance relationship
   public:
      Square(char pname[], int length) 
        : Rectangle(pname, length, length) {
